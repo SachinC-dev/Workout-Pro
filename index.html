@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Workout Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <div class="inner">
+      <header class="topbar">
+        <button id="hamburger" class="hamburger" aria-label="Open menu">☰</button>
+        <h1>Workout Tracker</h1>
+      </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="dates">
+          <h3>Last 30 days</h3>
+          <ul id="datesList"></ul>
+        </div>
+
+        <div class="templates">
+          <h3>Templates (preloads)</h3>
+          <div class="template-controls">
+            <button id="saveTemplateBtn">Save Today's as Template</button>
+            <button id="newTemplateBtn">New Template</button>
+            <button id="exportTemplatesBtn">Export Templates</button>
+            <button id="useTemplatesFolderBtn">Use templates folder</button>
+            <button id="clearTemplatesBtn">Clear Templates</button>
+            <input id="importTemplatesFile" type="file" accept="application/json" style="display:none" multiple />
+            <button id="importTemplatesBtn">Import Templates</button>
+          </div>
+          <ul id="templatesList"></ul>
+        </div>
+      </aside>
+
+      <section class="main">
+        <section class="add-form">
+          <input id="name" placeholder="Exercise name (e.g. Push-ups)" />
+          <input id="sets" type="number" min="1" value="3" />
+          <select id="unit">
+            <option value="reps" selected>reps</option>
+            <option value="seconds">seconds</option>
+            <option value="minutes">minutes</option>
+          </select>
+          <input id="reps" type="number" min="1" value="10" />
+          <button id="addBtn">Add Exercise</button>
+        </section>
+
+        <section class="controls">
+          <button id="clearBtn">Clear Today's</button>
+          <button id="exportBtn">Export Day JSON</button>
+        </section>
+
+        <section id="list" class="exercise-list">
+          <!-- Exercises will render here -->
+        </section>
+
+        <!-- Mobile templates section (visible on small screens) -->
+        <section id="mobileTemplatesSection" class="mobile-templates">
+          <h3>Templates</h3>
+          <div class="template-controls mobile-controls">
+            <button id="mobileSaveTemplateBtn">Save Today's as Template</button>
+            <button id="mobileNewTemplateBtn">New Template</button>
+            <button id="mobileExportTemplatesBtn">Export Templates</button>
+            <button id="mobileUseTemplatesFolderBtn">Use templates folder</button>
+            <button id="mobileClearTemplatesBtn">Clear Templates</button>
+            <input id="mobileImportTemplatesFile" type="file" accept="application/json" style="display:none" multiple />
+            <button id="mobileImportTemplatesBtn">Import Templates</button>
+          </div>
+          <ul id="mobileTemplatesList"></ul>
+        </section>
+      </section>
+    </div>
+
+      <footer class="footer-note">Saved locally in your browser (no account needed).</footer>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+
+  <div id="templateModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <h3 id="modalTitle">Template</h3>
+      <label>Template name</label>
+      <input id="tmplName" placeholder="e.g. Push Day" />
+      <div id="tmplExercises" class="tmpl-exercises"></div>
+      <div class="tmpl-form">
+        <input id="tmplExName" placeholder="Exercise name" />
+        <input id="tmplSets" type="number" min="1" value="3" />
+        <select id="tmplUnit">
+          <option value="reps" selected>reps</option>
+          <option value="seconds">seconds</option>
+          <option value="minutes">minutes</option>
+        </select>
+        <input id="tmplReps" type="number" min="1" value="10" />
+        <button id="addTmplExBtn">Add to template</button>
+      </div>
+      <div class="modal-actions">
+        <button id="saveTmplBtn">Save</button>
+        <button id="cancelTmplBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
