@@ -3,12 +3,12 @@
 A small, local-first workout tracking web app. Users can define exercises with sets and reps and mark exercises done using a checkbox. Data is saved to the browser's `localStorage`.
 
 Files
-- [workout-app/index.html](workout-app/index.html)
-- [workout-app/style.css](workout-app/style.css)
-- [workout-app/app.js](workout-app/app.js)
+- [workout-pro/index.html](workout-pro/index.html)
+- [workout-pro/style.css](workout-pro/style.css)
+- [workout-pro/app.js](workout-pro/app.js)
 
 Quick start
-1. Open [workout-app/index.html](workout-app/index.html) in your browser (double-click or drag into browser).
+1. Open [workout-pro/index.html](workout-pro/index.html) in your browser (double-click or drag into browser).
 
 Optional: serve with a local static server for better behavior:
 
